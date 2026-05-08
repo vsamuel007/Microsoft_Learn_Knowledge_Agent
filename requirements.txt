@@ -1,0 +1,27 @@
+# Install agentserver + agent-dev-cli first, then agent-framework packages
+# to avoid dependency resolution conflicts (agentserver pins agent-framework-core<=rc3)
+
+# Step 1 — agentserver and dev CLI
+azure-ai-agentserver-agentframework==1.0.0b16
+azure-ai-agentserver-core==1.0.0b16
+agent-dev-cli==0.0.1b260316
+
+# Step 2 — agent-framework (overrides rc3 pulled in above)
+agent-framework-core==1.0.0rc6
+agent-framework-foundry==1.0.0rc6
+agent-framework-openai==1.0.0rc6
+
+# Azure identity
+azure-identity>=1.15.0
+
+# HTTP client
+aiohttp>=3.9.0
+
+# Bot Framework SDK
+botbuilder-core==4.17.1
+
+# Utilities
+python-dotenv>=1.0.0
+
+# File watching (used by sync_to_foundry.py)
+watchdog>=4.0.0
